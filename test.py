@@ -1,8 +1,15 @@
-def adding(n1, n2):
-    res = n1 + n2
-    return res
 
-print(adding(2, 5))
 
-# result = adding(2,5)
-# print(result)
+N = 30
+
+
+
+def adding(a1, n2):
+    return n3 + N + a1 + n2
+
+def main():
+    n1 = 10
+    n2 = 20 
+    n3 = 40
+    res = adding(n1, n2)
+    print(res)
