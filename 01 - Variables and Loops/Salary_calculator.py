@@ -6,7 +6,7 @@
 
 for i in range(5):
 
-    gross_salary = int( input(f'Please enter your salary for person {i}: ') )   # int (100,000)
+    gross_salary = int( input(f'Please enter your salary for person}: ') )   # int (100,000)
     tax_rate = int(input('enter your tax rate: '))
 
     tax_amount = gross_salary * tax_rate / 100 
