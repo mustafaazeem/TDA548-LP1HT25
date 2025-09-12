@@ -29,34 +29,44 @@ def decrypt(encrypted_info, p_inv, m):
     clear_text = encrypted_info * p_inv % m
     return clear_text
 
+def encrypt_text(msg, p, m):
+    msg_list = list(msg)
+    encrypted_list = [] 
+    print(encrypted_list)
+    for i in msg_list:
+        encrypted_list.append( ord(i) * p % m ) 
+    
+    return encrypted_list
+
+def decrypt(encrypted_data, p_inv, m):
+    clear_data = []
+    for number in encrypted_data:
+        clear_data.append( chr (number * p_inv % m ))
+
+    clear_msg = ''.join(clear_data)
+    print(clear_data)
+    print(clear_msg)
+
+
 def main():
     p = -1 
     m = -1 
-    info = 524
-
+    msg = "This is our Python class 2025" 
     while True:
         p = randint(1, 999)
         if is_prime(p): # if is_prime(p) == True 
             break 
-
     while True:
         m = randint(1000, 9999)
         if gcd(p, m) == 1:
             break
 
     p_inv = find_inv(p, m)
-
-    encrypted = encrypt(info, p, m)
-    print('inf: ', info)
-    print('encrypted: ', encrypted)
-    clear_info = decrypt(encrypted, p_inv, m)
-    print("decrpted_info: ", clear_info)
+    encrypted_list = encrypt_text(msg, p, m)
+    print(encrypted_list)
+    decrypt(encrypted_list, p_inv, m)
 
 
-    # print(f'the prime: {p}, the modulo: {m}, the inverse {p_inv}')
-
-
-  
 
 
 
