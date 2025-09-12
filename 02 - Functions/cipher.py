@@ -17,19 +17,47 @@ def gcd(a, b):
     return a 
 
 def find_inv(p, m):
-    p_inv = 1 
-    while 
+    for i in range(m):
+        if (p * i) % m == 1:
+            return i
+
+def encrypt(info, p, m):
+    cipher_text = info * p % m 
+    return cipher_text    
+
+def decrypt(encrypted_info, p_inv, m):
+    clear_text = encrypted_info * p_inv % m
+    return clear_text
+
 def main():
     p = -1 
     m = -1 
+    info = 524
+
     while True:
         p = randint(1, 999)
-        if is_prime(p):
+        if is_prime(p): # if is_prime(p) == True 
             break 
-    m = randint(1000, 9999)
 
-    print(f'the prime you got is {p}, and m you got is {m}')
+    while True:
+        m = randint(1000, 9999)
+        if gcd(p, m) == 1:
+            break
+
+    p_inv = find_inv(p, m)
+
+    encrypted = encrypt(info, p, m)
+    print('inf: ', info)
+    print('encrypted: ', encrypted)
+    clear_info = decrypt(encrypted, p_inv, m)
+    print("decrpted_info: ", clear_info)
+
+
+    # print(f'the prime: {p}, the modulo: {m}, the inverse {p_inv}')
+
+
   
+
 
 
 main()
