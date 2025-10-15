@@ -1,0 +1,10 @@
+eggs 15
+milk 10
+bread 2
+apples 6
+rice 1
+chicken 2
+yogurt 4
+tomatoes 5
+cheese 1
+spinach 3
