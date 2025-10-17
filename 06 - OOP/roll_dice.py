@@ -13,6 +13,8 @@ def main():
     d2 = Dice(6, 'blue')
     for i in range(10):
 
+        d1_face.setFace()
+
 
         d1.roll()
         d2.roll()

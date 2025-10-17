@@ -9,6 +9,7 @@ def gene_match(gene, genome_file):
 def gene_match2(gene, genome_file):
     with open(genome_file) as infile:
         yield from infile
+        
         # for line in infile: 
         #     yield line
 
